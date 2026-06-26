@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Place Organizer 개인정보 처리방침</title>
+    <meta
+      name="description"
+      content="Photo Place Organizer Android 앱의 개인정보 처리방침"
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f7f2;
+        --paper: #ffffff;
+        --ink: #202621;
+        --muted: #5f6b62;
+        --line: #d8ded5;
+        --accent: #176b54;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+      }
+
+      main {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 40px 0 56px;
+      }
+
+      article {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: clamp(24px, 4vw, 48px);
+      }
+
+      h1,
+      h2 {
+        line-height: 1.25;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(30px, 4vw, 44px);
+      }
+
+      h2 {
+        margin: 36px 0 12px;
+        font-size: 22px;
+      }
+
+      p,
+      li {
+        font-size: 16px;
+      }
+
+      ul {
+        padding-left: 22px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .meta {
+        margin: 0 0 24px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Photo Place Organizer 개인정보 처리방침</h1>
+        <p class="meta">최종 갱신일: 2026-06-26</p>
+
+        <p>
+          Photo Place Organizer는 사용자가 선택한 사진의 정리 후보를 기기
+          안에서 만들고, 사용자가 확정한 후보를 바탕으로 복사본 내보내기를
+          돕는 로컬-first 사진 정리 앱입니다.
+        </p>
+
+        <h2>게시자와 문의</h2>
+        <ul>
+          <li>게시자: innoprej</li>
+          <li>
+            개인정보 문의:
+            <a href="https://github.com/innoprej/photo-place-organizer-privacy/issues">
+              https://github.com/innoprej/photo-place-organizer-privacy/issues
+            </a>
+          </li>
+          <li>
+            공개 URL:
+            <a href="https://innoprej.github.io/photo-place-organizer-privacy/">
+              https://innoprej.github.io/photo-place-organizer-privacy/
+            </a>
+          </li>
+        </ul>
+
+        <h2>앱이 접근하거나 처리하는 데이터</h2>
+        <p>
+          앱은 사용자가 Android Photo Picker에서 직접 선택한 사진에만
+          접근합니다. 앱은 선택된 사진의 URI, 표시명, MIME 유형, 파일 크기,
+          EXIF 촬영시각, EXIF GPS 좌표가 있는 경우 해당 좌표를 읽을 수 있고,
+          이 메타데이터를 기기 로컬 DB에 저장할 수 있습니다.
+        </p>
+        <p>
+          앱은 사용자가 직접 입력한 장소, 여행 기간, 경로 템플릿, 분류 후보에
+          대한 확정, 보류, 거절 결정, 복사본 내보내기 기록을 기기 로컬 DB에
+          저장합니다.
+        </p>
+        <p>
+          앱은 기기의 현재 위치 권한을 요청하지 않습니다. 사진 안에 저장된
+          EXIF GPS 정보가 있을 때만 해당 사진의 정리 후보 계산에 사용합니다.
+        </p>
+
+        <h2>데이터 사용 목적</h2>
+        <ul>
+          <li>선택한 사진의 촬영일과 위치 기반 정리 후보 생성</li>
+          <li>사용자가 등록한 장소와 여행 템플릿 기반 분류 후보 생성</li>
+          <li>사용자가 확정한 후보의 실행 계획 표시</li>
+          <li>사용자가 고른 폴더에 정리된 복사본 생성</li>
+          <li>앱이 만든 복사본을 식별하고 cleanup할 수 있는 기록 보관</li>
+        </ul>
+
+        <h2>데이터 전송과 공유</h2>
+        <p>
+          현재 MVP는 INTERNET 권한을 선언하지 않으며, 외부 서버, 광고 SDK,
+          분석 SDK, 지도 SDK, WebView를 사용하지 않습니다. 앱이 처리하는 사진
+          정보와 위치 정보는 개발자 서버, 광고 SDK, 분석 SDK로 자동 전송되지
+          않습니다.
+        </p>
+        <p>
+          사용자가 사진 보기를 누르면 앱은 사용자가 선택한 외부 사진 앱에 해당
+          사진의 content URI와 읽기 권한을 전달할 수 있습니다. 사용자가 지도
+          버튼을 누르면 앱은 기본 지도 앱, Google 지도, NAVER 지도 같은
+          사용자가 선택한 외부 지도 앱 또는 지도 대상에 EXIF GPS 좌표와 화면
+          label을 포함한 지도 URI를 전달할 수 있습니다. 두 흐름은 모두 사용자가
+          명시적으로 시작한 작업이며, 외부 앱이 받은 데이터 처리에는 해당 앱의
+          개인정보 처리방침과 이용약관이 적용됩니다.
+        </p>
+        <p>
+          사용자가 복사본 내보내기를 실행하면 앱은 사용자가 Storage Access
+          Framework로 직접 고른 폴더에 사진 복사본을 저장합니다. 이 작업은
+          사용자가 시작한 작업이며, 대상 폴더가 클라우드 문서 제공자에 속하면
+          복사본은 해당 제공자나 저장 위치의 정책을 따를 수 있습니다.
+        </p>
+
+        <h2>데이터 보관과 삭제</h2>
+        <p>
+          앱의 로컬 DB 데이터는 사용자의 기기에 보관됩니다. 사용자는 앱 안의
+          로컬 데이터 초기화 흐름, Android 설정의 앱 데이터 삭제, 또는 앱 제거를
+          통해 로컬 DB 데이터를 삭제할 수 있습니다.
+        </p>
+        <p>
+          앱이 만든 최근 SAF 복사본은 앱 안의 cleanup 흐름으로 정리를 시도할 수
+          있습니다. cleanup은 사용자가 고른 문서 제공자, 저장된 권한, rollback
+          manifest 검증 결과에 따라 실패할 수 있습니다. cleanup 후보가 모두
+          사라지면 가능한 경우 SAF 폴더 장기 권한을 해제합니다. 원본 사진은 앱
+          cleanup 대상이 아니며, 앱은 원본 사진을 이동, 삭제, 수정하지 않습니다.
+        </p>
+        <p>
+          장소, 여행, 템플릿 설정은 앱 안의 편집 화면에서 개별 삭제할 수
+          있습니다. 로컬 데이터 초기화는 선택 사진 메타데이터, 분류 후보, 결정
+          이력, 장소, 여행, 템플릿, 최근 내보내기 기록을 삭제하고 기본 분류
+          설정을 다시 준비합니다.
+        </p>
+
+        <h2>보안</h2>
+        <p>
+          앱은 broad media permission, 전체 파일 접근 권한, 위치 권한, 인터넷
+          권한을 요청하지 않습니다. 사진 접근은 Android Photo Picker를 통해
+          사용자가 선택한 항목으로 제한합니다.
+        </p>
+        <p>
+          로컬 DB는 Android 앱 샌드박스 안에 저장됩니다. 현재 MVP는 로컬 DB
+          암호화를 제공하지 않으므로, 민감한 설명 문구나 개인 식별정보를
+          장소/템플릿 이름에 저장하지 않는 것을 권장합니다.
+        </p>
+
+        <h2>어린이</h2>
+        <p>이 앱은 어린이를 대상으로 하지 않습니다.</p>
+
+        <h2>변경</h2>
+        <p>
+          앱 기능, 데이터 처리 방식, 제3자 SDK 사용 여부가 바뀌면 이 개인정보
+          처리방침과 Google Play Data safety 답변을 함께 갱신합니다.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
